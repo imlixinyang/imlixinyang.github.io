@@ -1,0 +1,705 @@
+{
+  "profile": {
+    "name": {
+      "zh": "\u674e\u65b0\u9633",
+      "en": "Xinyang Li"
+    },
+    "avatar": "XY",
+    "tagline": "\u521b\u9020\u4eba\u4eba\u90fd\u53ef\u5236\u4f5c\u3001\u4f53\u9a8c\u7684\n\u53ef\u4ea4\u4e92\u3001\u53ef\u7f16\u7a0b\u3001\u53ef\u6301\u7eed\u7684\u4e16\u754c\u6a21\u578b",
+    "affiliation": {
+      "university": "\u53a6\u95e8\u5927\u5b66",
+      "degree": "\u535a\u58eb\u751f",
+      "lab": "\u5a92\u4f53\u5206\u6790\u4e0e\u8ba1\u7b97\u5b9e\u9a8c\u5ba4",
+      "advisor": "\u66f9\u5218\u5a1f"
+    },
+    "links": {
+      "github": {
+        "url": "https://github.com/imlixinyang",
+        "stats": "1.5K\u2605"
+      },
+      "scholar": {
+        "url": "https://scholar.google.com",
+        "stats": "603"
+      },
+      "email": "imlixinyang@gmail.com"
+    }
+  },
+  "news": [
+    {
+      "date": "2026.05",
+      "text": "FlashWorld \u88ab\u9009\u4e3a ICLR 2026 Oral Presentation",
+      "highlight": true
+    },
+    {
+      "date": "2026.03",
+      "text": "XSpecMesh \u88ab ICML 2026 \u5f55\u53d6"
+    },
+    {
+      "date": "2026.01",
+      "text": "CustomTex \u88ab CVPR 2026 \u5f55\u53d6"
+    },
+    {
+      "date": "2025.10",
+      "text": "\u52a0\u5165 VAST AI \u62c5\u4efb V-Star Research Intern\uff0c\u7814\u7a76\u4e16\u754c\u6a21\u578b"
+    },
+    {
+      "date": "2025.09",
+      "text": "FlashWorld \u88ab ICLR 2026 \u5f55\u53d6"
+    },
+    {
+      "date": "2025.04",
+      "text": "\u52a0\u5165\u817e\u8baf\u6df7\u51433D \u5b9e\u4e60\uff0c\u7814\u7a76\u4e16\u754c\u6a21\u578b"
+    },
+    {
+      "date": "2025.01",
+      "text": "Prometheus\u3001EvoGaussian \u88ab CVPR 2025 \u5f55\u53d6"
+    },
+    {
+      "date": "2024.09",
+      "text": "Director3D \u88ab NeurIPS 2024 \u5f55\u53d6"
+    }
+  ],
+  "skillTree": {
+    "blocks": [
+      {
+        "id": "gan-based-image-editing",
+        "title": "Image Editing GANs",
+        "repr": "HiSD",
+        "tagline": "Disentangling real visual attribute distributions with binary labels using GANs.",
+        "detail": "My research started with GAN-based image editing. HiSD was my first paper, and it taught me how to think about structured latent spaces \u2014 disentangling hair color, expression, style into independent, controllable dimensions.",
+        "image": "/assets/hisd.png",
+        "node": "hisd"
+      },
+      {
+        "id": "3d-gans",
+        "title": "3D GANs",
+        "repr": "StyleGRAF",
+        "tagline": "Disentangle 3D and camera distributions from in-the-wild images using neural rendering and GANs.",
+        "detail": "Disentangle 3D and camera distributions from in-the-wild images using neural rendering and GANs.",
+        "image": "/assets/stylegraf.png",
+        "node": "stylegraf"
+      },
+      {
+        "id": "object-generation",
+        "title": "3D Object Generation",
+        "repr": "Dual3D",
+        "tagline": "Rendering-based multi-view diffusion Model tuned from pretrained text-to-image diffusion model.",
+        "detail": "Dual3D tackled the efficiency problem of text-to-3D, introducing a dual-mode latent diffusion approach that made consistent multi-view generation practical.",
+        "image": "/assets/dual3d.png",
+        "node": "dual3d"
+      },
+      {
+        "id": "scene-generation",
+        "title": "3D Scene Generation",
+        "repr": "Director3D",
+        "tagline": "Generating camera trajectories and full 3D scenes from text descriptions.",
+        "detail": "Director3D scaled the ambition up: generating camera trajectories and full 3D scenes from text descriptions, combining spatial reasoning with generative modeling.",
+        "image": "/assets/director3d.png",
+        "node": "director3d"
+      },
+      {
+        "id": "world-generation",
+        "title": "3D World Generation",
+        "repr": "FlashWorld",
+        "tagline": "Generating High-quality, persistent and interactive 3D worlds in seconds with video-to-3D distillation.",
+        "detail": "FlashWorld achieved what I'd been working toward all along \u2014 generating high-quality, persistent 3D worlds in seconds through cross-mode distillation. ICLR 2026 Oral.",
+        "image": "/assets/flashworld.png",
+        "node": "flashworld"
+      },
+      {
+        "id": "dynamic-world",
+        "title": "4D World Generation",
+        "repr": "TBA",
+        "tagline": "TBA",
+        "detail": "TBA",
+        "image": "",
+        "node": "dynamic-world"
+      }
+    ],
+    "mainline": [
+      "hisd",
+      "stylegarf",
+      "neuralsim",
+      "dual3d",
+      "director3d",
+      "prometheus",
+      "flashworld",
+      "dynamic-world"
+    ],
+    "lines": [
+      {
+        "id": "gen-world-model",
+        "label": "World Model",
+        "color": "#00ffff",
+        "row": 0,
+        "group": "Generation"
+      },
+      {
+        "id": "gen-3d-object",
+        "label": "3D Object",
+        "color": "#00bbff",
+        "row": 1,
+        "group": "Generation"
+      },
+      {
+        "id": "gen-others",
+        "label": "Others",
+        "color": "#88aaff",
+        "row": 2,
+        "group": "Generation"
+      },
+      {
+        "id": "edit-image",
+        "label": "Image",
+        "color": "#ff00ff",
+        "row": 3,
+        "group": "Editing"
+      },
+      {
+        "id": "edit-3d",
+        "label": "3D",
+        "color": "#ff55aa",
+        "row": 4,
+        "group": "Editing"
+      },
+      {
+        "id": "reconstruction",
+        "label": "Reconstruction",
+        "color": "#00ff88",
+        "row": 5
+      },
+      {
+        "id": "perception",
+        "label": "Perception",
+        "color": "#ffff00",
+        "row": 6
+      }
+    ],
+    "nodes": [
+      {
+        "id": "hisd",
+        "label": "HiSD",
+        "year": 2021,
+        "line": "edit-image",
+        "desc": "GAN-based multi-modal image-to-image translation via hierarchical style disentanglement",
+        "venue": "CVPR 2021",
+        "tag": "Oral",
+        "stars": 395,
+        "highlight": true,
+        "authors": [
+          "X Li",
+          "S Zhang",
+          "J Hu",
+          "L Cao",
+          "X Hong",
+          "X Mao",
+          "F Huang",
+          "Y Wu",
+          "R Ji"
+        ],
+        "image": "/assets/hisd.png",
+        "video": "",
+        "link": "https://github.com/imlixinyang/HiSD",
+        "paper": "https://arxiv.org/abs/2103.01456"
+      },
+      {
+        "id": "stylegarf",
+        "label": "StyleGARF",
+        "year": 2022,
+        "line": "gen-3d-object",
+        "desc": "Style-based generative radiance field for 3D-aware portrait generation",
+        "venue": "",
+        "authors": [],
+        "image": "",
+        "video": "",
+        "link": "",
+        "paper": ""
+      },
+      {
+        "id": "neuralsim",
+        "label": "NeuralSim",
+        "year": 2022.5,
+        "line": "reconstruction",
+        "desc": "Neural street scene reconstruction, editing and rendering for autonomous driving",
+        "venue": "",
+        "stars": 666,
+        "highlight": true,
+        "authors": [],
+        "image": "",
+        "video": "/assets/neuralsim.mp4",
+        "link": "https://github.com/PJLab-ADG/neuralsim",
+        "paper": "https://arxiv.org/abs/2306.04988"
+      },
+      {
+        "id": "nerfdets",
+        "label": "NeRF-dets",
+        "coauthor": true,
+        "year": 2023.5,
+        "line": "perception",
+        "desc": "Enhancing multi-view 3D object detection with sampling-adaptive network of continuous nerf-based representation",
+        "venue": "IJCNN 2025",
+        "authors": [
+          "C Huang",
+          "X Li",
+          "S Zhang",
+          "L Cao",
+          "R Ji"
+        ],
+        "image": "",
+        "video": "",
+        "link": "",
+        "paper": "https://arxiv.org/abs/2404.13921"
+      },
+      {
+        "id": "dual3d",
+        "label": "Dual3D",
+        "year": 2024.0,
+        "line": "gen-3d-object",
+        "desc": "Efficient and consistent text-to-3D generation with dual-mode multi-view latent diffusion",
+        "venue": "Patent",
+        "authors": [
+          "X Li",
+          "Z Lai",
+          "L Xu",
+          "J Guo",
+          "L Cao",
+          "S Zhang",
+          "B Dai",
+          "R Ji"
+        ],
+        "image": "/assets/dual3d.png",
+        "video": "",
+        "link": "",
+        "paper": "https://arxiv.org/abs/2405.09874"
+      },
+      {
+        "id": "anyuneed",
+        "label": "AnyUNeed",
+        "year": 2024.1,
+        "line": "reconstruction",
+        "desc": "Monocular 3D scene reconstruction from a single image (2.5 years earlier than CAST SIGGRAPH 2025 Best Paper)",
+        "venue": "Patent",
+        "authors": [
+          "X Li"
+        ],
+        "image": "",
+        "video": "",
+        "link": "",
+        "paper": ""
+      },
+      {
+        "id": "goi",
+        "label": "GOI",
+        "coauthor": true,
+        "year": 2024.2,
+        "line": "perception",
+        "desc": "Find 3D Gaussians of interest with open-vocabulary semantic hyperplane",
+        "venue": "ACMMM 2024",
+        "stars": 73,
+        "authors": [
+          "Y Qu",
+          "S Dai",
+          "X Li",
+          "J Lin",
+          "L Cao",
+          "S Zhang",
+          "R Ji"
+        ],
+        "image": "",
+        "video": "",
+        "link": "https://github.com/Quyans/GOI-Hyperplane",
+        "paper": "https://arxiv.org/abs/2405.17596"
+      },
+      {
+        "id": "director3d",
+        "label": "Director3D",
+        "year": 2024.5,
+        "line": "gen-world-model",
+        "desc": "Real-world camera trajectory and 3D scene generation from text",
+        "venue": "NeurIPS 2024",
+        "stars": 379,
+        "highlight": true,
+        "authors": [
+          "X Li",
+          "Z Lai",
+          "L Xu",
+          "Y Qu",
+          "L Cao",
+          "S Zhang",
+          "B Dai",
+          "R Ji"
+        ],
+        "image": "/assets/director3d.png",
+        "video": "",
+        "link": "https://github.com/imlixinyang/Director3D",
+        "paper": "https://arxiv.org/abs/2406.17601"
+      },
+      {
+        "id": "prometheus",
+        "label": "Prometheus",
+        "coauthor": true,
+        "year": 2025.0,
+        "line": "gen-world-model",
+        "desc": "3D-aware latent diffusion for feed-forward text-to-3D scene generation",
+        "venue": "CVPR 2025",
+        "stars": 147,
+        "authors": [
+          "Y Yang",
+          "J Shao",
+          "X Li",
+          "Y Shen",
+          "A Geiger",
+          "Y Liao"
+        ],
+        "image": "",
+        "video": "",
+        "link": "https://github.com/XDimLab/Prometheus",
+        "paper": "https://arxiv.org/abs/2412.21117"
+      },
+      {
+        "id": "evogaussian",
+        "label": "EvoGaussian",
+        "coauthor": true,
+        "year": 2025.0,
+        "line": "reconstruction",
+        "desc": "Unified rendering and reconstruction with contribution-adaptive regularization",
+        "venue": "CVPR 2025",
+        "authors": [
+          "Y Shen",
+          "Z Zhang",
+          "X Li",
+          "Y Qu",
+          "Y Lin",
+          "S Zhang",
+          "L Cao"
+        ],
+        "image": "",
+        "video": "",
+        "link": "",
+        "paper": ""
+      },
+      {
+        "id": "synergyamodal",
+        "label": "SynergyAmodal",
+        "year": 2025.2,
+        "line": "gen-others",
+        "desc": "First open-world de-occlusion dataset; deocclude anything with text control",
+        "venue": "ACMMM 2025",
+        "stars": 9,
+        "authors": [
+          "X Li",
+          "C Yi",
+          "J Lai",
+          "M Lin",
+          "Y Qu",
+          "S Zhang",
+          "L Cao"
+        ],
+        "image": "/assets/synergyamodal.png",
+        "video": "",
+        "link": "https://github.com/imlixinyang/SynergyAmodal",
+        "paper": "https://arxiv.org/abs/2504.19506"
+      },
+      {
+        "id": "sph",
+        "label": "SPH",
+        "coauthor": true,
+        "year": 2025.3,
+        "line": "perception",
+        "desc": "Training-free hierarchical scene understanding for Gaussian Splatting with superpoint graphs",
+        "venue": "ACMMM 2025",
+        "stars": 43,
+        "authors": [
+          "S Dai",
+          "Y Qu",
+          "Z Li",
+          "X Li",
+          "S Zhang",
+          "L Cao"
+        ],
+        "image": "",
+        "video": "",
+        "link": "https://github.com/Atrovast/THGS",
+        "paper": "https://arxiv.org/abs/2504.13153"
+      },
+      {
+        "id": "draggaussian",
+        "label": "DragGaussian",
+        "coauthor": true,
+        "year": 2025.4,
+        "line": "edit-3d",
+        "desc": "Drag-based 3DGS editing with score distillation",
+        "venue": "SIGGRAPH 2025",
+        "stars": 165,
+        "authors": [
+          "Y Qu",
+          "D Chen",
+          "X Li",
+          "X Li",
+          "S Zhang",
+          "L Cao",
+          "R Ji"
+        ],
+        "image": "",
+        "video": "",
+        "link": "https://github.com/Quyans/Drag-Your-Gaussian",
+        "paper": "https://arxiv.org/abs/2501.18672"
+      },
+      {
+        "id": "anomalypainter",
+        "label": "AnomalyPainter",
+        "coauthor": true,
+        "year": 2025.5,
+        "line": "edit-image",
+        "desc": "Vision-language-diffusion synergy for zero-shot realistic industrial anomaly synthesis",
+        "venue": "AAAI 2026",
+        "authors": [
+          "Z Lai",
+          "Y Lu",
+          "X Li",
+          "J Lin",
+          "Y Qu",
+          "L Cao",
+          "M Li",
+          "R Ji"
+        ],
+        "image": "",
+        "video": "",
+        "link": "",
+        "paper": "https://arxiv.org/abs/2503.07253"
+      },
+      {
+        "id": "deocc",
+        "label": "DeOcc",
+        "coauthor": true,
+        "year": 2025.0,
+        "line": "gen-3d-object",
+        "desc": "3D de-occlusion from a single image via self-supervised multi-view diffusion",
+        "venue": "AAAI 2026",
+        "stars": 38,
+        "authors": [
+          "Y Qu",
+          "S Dai",
+          "X Li",
+          "Y Wang",
+          "Y Shen",
+          "L Cao",
+          "R Ji"
+        ],
+        "image": "",
+        "video": "",
+        "link": "https://github.com/Quyans/DeOcc123",
+        "paper": "https://arxiv.org/abs/2506.21544"
+      },
+      {
+        "id": "flashworld",
+        "label": "FlashWorld",
+        "year": 2025.8,
+        "line": "gen-world-model",
+        "desc": "High-quality 3D scene generation within seconds via cross-mode distillation",
+        "venue": "ICLR 2026",
+        "tag": "Oral",
+        "stars": 786,
+        "highlight": true,
+        "authors": [
+          "X Li",
+          "T Wang",
+          "Z Gu",
+          "S Zhang",
+          "C Guo",
+          "L Cao"
+        ],
+        "image": "/assets/flashworld_teaser.png",
+        "video": "",
+        "link": "https://github.com/imlixinyang/FlashWorld",
+        "paper": "https://arxiv.org/abs/2510.13678",
+        "story": "\u8fd9\u662f\u6211\u535a\u58eb\u671f\u95f4\u6700\u91cd\u8981\u7684\u5de5\u4f5c\u3002\u4ece Director3D \u7684\u7ecf\u9a8c\u51fa\u53d1\uff0c\u6211\u610f\u8bc6\u5230...",
+        "image2": "/assets/flashworld_method.png"
+      },
+      {
+        "id": "customtex",
+        "label": "CustomTex",
+        "coauthor": true,
+        "year": 2025.9,
+        "line": "gen-others",
+        "desc": "High-fidelity indoor scene texturing via multi-reference customization",
+        "venue": "CVPR 2026",
+        "authors": [
+          "W Chen",
+          "J Rao",
+          "W Wang",
+          "X Li",
+          "X Cheng",
+          "L Cao"
+        ],
+        "image": "",
+        "video": "",
+        "link": "",
+        "paper": "https://arxiv.org/abs/2603.19121"
+      },
+      {
+        "id": "xspecmesh",
+        "label": "XSpecMesh",
+        "coauthor": true,
+        "year": 2025.1,
+        "line": "gen-3d-object",
+        "desc": "Auto-regressive mesh generation acceleration via speculative decoding",
+        "venue": "ICML 2026",
+        "stars": 17,
+        "authors": [
+          "D Chen",
+          "Y Qu",
+          "X Li",
+          "M Li",
+          "S Zhang"
+        ],
+        "image": "",
+        "video": "",
+        "link": "https://github.com/CD-link/XSpecMesh",
+        "paper": "https://arxiv.org/abs/2507.23777"
+      },
+      {
+        "id": "dynamic-world",
+        "label": "TBA",
+        "year": 2026.3,
+        "line": "gen-world-model",
+        "desc": "TBA",
+        "venue": "TBA",
+        "inProgress": true,
+        "authors": [],
+        "image": "",
+        "video": "",
+        "link": "",
+        "paper": "",
+        "tag": "",
+        "stars": null
+      }
+    ],
+    "edges": [
+      {
+        "from": "hisd",
+        "to": "stylegarf"
+      },
+      {
+        "from": "stylegarf",
+        "to": "neuralsim"
+      },
+      {
+        "from": "neuralsim",
+        "to": "dual3d"
+      },
+      {
+        "from": "neuralsim",
+        "to": "anyuneed"
+      },
+      {
+        "from": "neuralsim",
+        "to": "evogaussian"
+      },
+      {
+        "from": "dual3d",
+        "to": "director3d"
+      },
+      {
+        "from": "director3d",
+        "to": "prometheus"
+      },
+      {
+        "from": "director3d",
+        "to": "draggaussian"
+      },
+      {
+        "from": "anyuneed",
+        "to": "synergyamodal"
+      },
+      {
+        "from": "goi",
+        "to": "sph"
+      },
+      {
+        "from": "anyuneed",
+        "to": "deocc"
+      },
+      {
+        "from": "prometheus",
+        "to": "flashworld"
+      },
+      {
+        "from": "flashworld",
+        "to": "dynamic-world"
+      }
+    ]
+  },
+  "storyline": [
+    {
+      "id": "hisd",
+      "title": "HiSD",
+      "chapter": "Chapter 1",
+      "venue": "CVPR 2021 Oral",
+      "stars": 395,
+      "motivation": "\u4ece GAN \u591a\u6a21\u6001\u7f16\u8f91\u51fa\u53d1\uff0c\u63a2\u7d22\u5982\u4f55\u63a7\u5236\u751f\u6210\u8fc7\u7a0b",
+      "comic": "/assets/comic-hisd.png",
+      "link": "https://github.com/imlixinyang/HiSD"
+    },
+    {
+      "id": "stylegarf",
+      "title": "StyleGARF",
+      "chapter": "Chapter 2",
+      "venue": "",
+      "stars": 0,
+      "motivation": "\u4e16\u754c\u7684\u672c\u8d28\u5206\u5e03\u662f 3D \u7684\u2014\u2014\u5f00\u59cb\u63a2\u7d22\u4e09\u7ef4\u611f\u77e5\u751f\u6210",
+      "comic": "/assets/comic-stylegarf.png",
+      "link": ""
+    },
+    {
+      "id": "neuralsim",
+      "title": "NeuralSim",
+      "chapter": "Chapter 3",
+      "venue": "",
+      "stars": 660,
+      "motivation": "\u5c06\u57fa\u4e8e\u6e32\u67d3\u7684\u751f\u6210\u843d\u5730\u5230\u81ea\u52a8\u9a7e\u9a76\uff0c\u9a8c\u8bc1 3D \u8868\u5f81\u7684\u4ef7\u503c",
+      "comic": "/assets/comic-neuralsim.png",
+      "link": ""
+    },
+    {
+      "id": "dual3d",
+      "title": "Dual3D",
+      "chapter": "Chapter 4",
+      "venue": "Patent",
+      "stars": 0,
+      "motivation": "\u901a\u7528\u4e09\u7ef4\u751f\u6210\u9700\u8981\u6570\u636e\u9a71\u52a8\u2014\u2014\u9996\u4e2a\u539f\u751f 3D \u6269\u6563\u6a21\u578b\u63a2\u7d22",
+      "comic": "/assets/comic-dual3d.png",
+      "link": ""
+    },
+    {
+      "id": "director3d",
+      "title": "Director3D",
+      "chapter": "Chapter 5",
+      "venue": "NeurIPS 2024",
+      "stars": 376,
+      "motivation": "\u4ece\u7269\u4f53\u5230\u573a\u666f\uff1a\u540c\u65f6\u751f\u6210\u76f8\u673a\u8f68\u8ff9\u548c 3D \u573a\u666f",
+      "comic": "/assets/comic-director3d.png",
+      "link": "https://github.com/imlixinyang/Director3D"
+    },
+    {
+      "id": "flashworld",
+      "title": "FlashWorld",
+      "chapter": "Chapter 6",
+      "venue": "ICLR 2026 Oral",
+      "stars": 754,
+      "motivation": "\u8bc1\u660e\u57fa\u4e8e\u6e32\u67d3\u7684\u4e16\u754c\u6a21\u578b\u5728\u6548\u7387\u3001\u6548\u679c\u3001\u4e00\u81f4\u6027\u4e0a\u5168\u9762\u8d85\u8d8a\u89c6\u9891\u6a21\u578b",
+      "comic": "/assets/comic-flashworld.png",
+      "link": "https://github.com/imlixinyang/FlashWorld"
+    },
+    {
+      "id": "flashdynamics",
+      "title": "FlashDynamics",
+      "chapter": "Chapter 7",
+      "venue": "2026 \u2192",
+      "stars": 0,
+      "motivation": "\u4e0b\u4e00\u6b65\uff1a\u5b9e\u65f6\u52a8\u6001\u3001\u53ef\u4ea4\u4e92\u3001\u53ef\u7f16\u7a0b\u7684\u4e16\u754c\u6a21\u578b",
+      "comic": "/assets/comic-flashdynamics.png",
+      "link": ""
+    }
+  ]
+}
