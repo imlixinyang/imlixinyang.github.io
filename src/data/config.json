@@ -27,36 +27,36 @@
   "news": [
     {
       "date": "2026.05",
-      "text": "FlashWorld \u88ab\u9009\u4e3a ICLR 2026 Oral Presentation",
+      "text": "FlashWorld selected as ICLR 2026 Oral Presentation",
       "highlight": true
     },
     {
       "date": "2026.03",
-      "text": "XSpecMesh \u88ab ICML 2026 \u5f55\u53d6"
+      "text": "XSpecMesh accepted by ICML 2026"
     },
     {
       "date": "2026.01",
-      "text": "CustomTex \u88ab CVPR 2026 \u5f55\u53d6"
+      "text": "CustomTex accepted by CVPR 2026"
     },
     {
       "date": "2025.10",
-      "text": "\u52a0\u5165 VAST AI \u62c5\u4efb V-Star Research Intern\uff0c\u7814\u7a76\u4e16\u754c\u6a21\u578b"
+      "text": "Joined VAST AI as V-Star Research Intern, working on World Models"
     },
     {
       "date": "2025.09",
-      "text": "FlashWorld \u88ab ICLR 2026 \u5f55\u53d6"
+      "text": "FlashWorld accepted by ICLR 2026"
     },
     {
       "date": "2025.04",
-      "text": "\u52a0\u5165\u817e\u8baf\u6df7\u51433D \u5b9e\u4e60\uff0c\u7814\u7a76\u4e16\u754c\u6a21\u578b"
+      "text": "Joined Tencent Mixed 3D as intern, working on World Models"
     },
     {
       "date": "2025.01",
-      "text": "Prometheus\u3001EvoGaussian \u88ab CVPR 2025 \u5f55\u53d6"
+      "text": "Prometheus & EvoGaussian accepted by CVPR 2025"
     },
     {
       "date": "2024.09",
-      "text": "Director3D \u88ab NeurIPS 2024 \u5f55\u53d6"
+      "text": "Director3D accepted by NeurIPS 2024"
     }
   ],
   "skillTree": {
