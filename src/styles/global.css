@@ -26,12 +26,12 @@
   --danger: #ff3b30;
   --radius: 4px;
   --font: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
-  --section-gap: clamp(48px, 6vw, 96px);
+  --section-gap: 96px;
 }
 
 html{
   font-family: var(--font);
-  font-size: clamp(14px, 0.5vw + 12px, 16px);
+  font-size: 15px;
   line-height: 1.5;
   color: var(--fg);
   background: var(--bg);
