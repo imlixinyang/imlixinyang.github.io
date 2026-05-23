@@ -300,6 +300,27 @@
   transition: opacity 0.3s;
 }
 
+.st-scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--surface-soft);
+  border: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: opacity 0.2s, background 0.15s;
+}
+.st-scroll-arrow:hover { background: var(--fg); color: var(--on-dark); border-color: var(--fg); }
+.st-scroll-arrow:hover svg path { stroke: var(--on-dark); }
+.st-scroll-arrow-left { left: 0; }
+.st-scroll-arrow-right { right: 0; }
+
 .st-blocks-view {
   display: flex;
   align-items: center;

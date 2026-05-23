@@ -1,0 +1,42 @@
+{
+  "en": {
+    "nav": { "home": "Home", "research": "Research" },
+    "hero": {
+      "greeting": "Hi I'm Xinyang Li",
+      "line1": "I build <strong>World Models</strong>",
+      "line2_prefix": "not by ",
+      "line2_ref": "directly generating videos",
+      "line3_prefix": "but by",
+      "line3_ref": "generating persistent worlds",
+      "citations": "Scholar",
+      "stars": "GitHub",
+      "hire": "Currently seeking 2027 new-grad positions in World Models — feel free to reach out if my work interests you",
+      "news_label": "Latest News"
+    },
+    "skilltree": {
+      "representative": "Representative",
+      "all_works": "All Works",
+      "scroll_hint": "← drag to scroll →"
+    }
+  },
+  "zh": {
+    "nav": { "home": "首页", "research": "研究" },
+    "hero": {
+      "greeting": "Hi，我是李新阳",
+      "line1": "我致力于构建模拟真实世界的<strong>世界模型</strong>",
+      "line2_prefix": "但不是通过",
+      "line2_ref": "直接生成视频",
+      "line3_prefix": "而是通过",
+      "line3_ref": "生成持久化的世界本身",
+      "citations": "Scholar",
+      "stars": "GitHub",
+      "hire": "目前正在寻找2027年全职岗位（世界模型方向）— 如果对我的工作感兴趣欢迎联系",
+      "news_label": "最新动态"
+    },
+    "skilltree": {
+      "representative": "代表作",
+      "all_works": "全部工作",
+      "scroll_hint": "← 拖动滚动 →"
+    }
+  }
+}

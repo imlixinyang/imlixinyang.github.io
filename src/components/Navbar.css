@@ -22,10 +22,16 @@
   color: var(--fg);
   text-decoration: none;
 }
-.nav-brand .cn{
+.nav-lang{
+  cursor: pointer;
   color: var(--mute);
   font-weight: 400;
-  font-size: 14px;
+  transition: color 0.15s;
+}
+.nav-lang:hover{ color: var(--fg); }
+.nav-lang-active{
+  color: var(--fg);
+  font-weight: 700;
 }
 .nav-links{
   display: flex;

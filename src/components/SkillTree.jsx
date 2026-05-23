@@ -1,6 +1,8 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react'
+import React, { useState, useRef, useEffect, useCallback, useContext } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { LangContext } from '../App'
 import config from '../data/config.json'
+import i18n from '../data/i18n.json'
 import './SkillTree.css'
 
 const { lines: LINES, nodes: NODES, edges: EDGES, blocks: BLOCKS } = config.skillTree
@@ -243,6 +245,8 @@ function BlocksView({ blocks, nodes, selectedBlock, selected, setSelectedBlock, 
 }
 
 function SkillTree() {
+  const { lang } = useContext(LangContext)
+  const t = i18n[lang].skilltree
   const sectionRef = useRef(null)
   const scrollRef = useRef(null)
   const canvasRef = useRef(null)
@@ -375,14 +379,27 @@ function SkillTree() {
             className={`st-mode-btn ${mode === 'main' ? 'st-mode-btn-active' : ''}`}
             onClick={() => handleModeSwitch('main')}
           >
-            Representative
+            {t.representative}
           </button>
           <button
             className={`st-mode-btn ${mode === 'all' ? 'st-mode-btn-active' : ''}`}
             onClick={() => handleModeSwitch('all')}
           >
-            All Works
+            {t.all_works}
           </button>
+        </div>
+
+        <div className="st-scroll-arrow st-scroll-arrow-left" onClick={() => {
+          const el = document.querySelector('.st-blocks-view') || scrollRef.current
+          el?.scrollBy({ left: -300, behavior: 'smooth' })
+        }}>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 3L5 7L9 11" stroke="var(--fg)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </div>
+        <div className="st-scroll-arrow st-scroll-arrow-right" onClick={() => {
+          const el = document.querySelector('.st-blocks-view') || scrollRef.current
+          el?.scrollBy({ left: 300, behavior: 'smooth' })
+        }}>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3L9 7L5 11" stroke="var(--fg)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
 
         <div className="st-content-area">
@@ -480,7 +497,7 @@ function SkillTree() {
             )}
         </div>
 
-        <div className="st-scroll-hint">← drag to scroll →</div>
+        <div className="st-scroll-hint">{t.scroll_hint}</div>
 
         <AnimatePresence mode="wait">
           {mode === 'all' && selectedNode && (

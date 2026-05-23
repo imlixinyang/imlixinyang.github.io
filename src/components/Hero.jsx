@@ -1,12 +1,14 @@
-import { useRef, useState, useEffect, useCallback } from 'react'
+import { useRef, useState, useEffect, useCallback, useContext } from 'react'
+import { LangContext } from '../App'
 import config from '../data/config.json'
+import i18n from '../data/i18n.json'
 import './Hero.css'
 
-function ComparisonFigure({ videoRef, renderRef }) {
+function ComparisonFigure({ videoRef, renderRef, hoverLine }) {
   return (
     <div className="figure-wrapper">
       {/* Video World Model */}
-      <div className="figure-box faded" ref={videoRef}>
+      <div className={`figure-box faded ${hoverLine === 'video' ? 'figure-box-hover' : ''}`} ref={videoRef}>
         <svg viewBox="0 0 320 75" className="figure-svg">
           <text x="4" y="3" className="fig-sublabel">User Input</text>
           <rect x="4" y="6" width="100" height="24" className="fig-box" />
@@ -42,7 +44,7 @@ function ComparisonFigure({ videoRef, renderRef }) {
       </div>
 
       {/* Rendering-based World Model */}
-      <div className="figure-box active" ref={renderRef}>
+      <div className={`figure-box active ${hoverLine === 'render' ? 'figure-box-hover' : ''}`} ref={renderRef}>
         <svg viewBox="0 0 320 135" className="figure-svg">
           <text x="4" y="3" className="fig-sublabel">User Input</text>
           <rect x="4" y="6" width="100" height="24" className="fig-box" />
@@ -102,11 +104,11 @@ function ComparisonFigure({ videoRef, renderRef }) {
   )
 }
 
-function NewsTicker({ news }) {
+function NewsTicker({ news, label }) {
   const items = news.slice(0, 3)
   return (
     <div className="news-ticker">
-      <div className="news-ticker-label">Latest News</div>
+      <div className="news-ticker-label">{label}</div>
       <div className="news-ticker-window">
         {items.map((item, i) => (
           <div key={i} className={`news-ticker-item ${item.highlight ? 'news-ticker-hl' : ''}`}>
@@ -120,12 +122,15 @@ function NewsTicker({ news }) {
 }
 
 function Hero() {
+  const { lang } = useContext(LangContext)
+  const t = i18n[lang].hero
   const heroRef = useRef(null)
   const refVideoText = useRef(null)
   const refRenderText = useRef(null)
   const refVideoBox = useRef(null)
   const refRenderBox = useRef(null)
   const [lines, setLines] = useState([])
+  const [hoverLine, setHoverLine] = useState(null)
 
   const computeLines = useCallback(() => {
     const hero = heroRef.current
@@ -137,8 +142,11 @@ function Hero() {
       return {
         right: r.right - heroRect.left,
         left: r.left - heroRect.left,
+        top: r.top - heroRect.top,
         bottom: r.bottom - heroRect.top,
         cy: (r.top + r.bottom) / 2 - heroRect.top,
+        q1: r.top + (r.bottom - r.top) * 0.25 - heroRect.top,
+        q3: r.top + (r.bottom - r.top) * 0.75 - heroRect.top,
       }
     }
 
@@ -149,21 +157,23 @@ function Hero() {
 
     setLines([
       { x1: vt.right + 4, y1: vt.cy, x2: vb.left - 4, y2: vb.cy, active: false },
-      { x1: rt.right + 4, y1: rt.cy, x2: rb.left - 4, y2: rb.cy, active: true },
+      { x1: rt.right + 4, y1: rt.cy, x2: rb.left - 4, y2: rb.q1, active: true },
     ])
   }, [])
 
   useEffect(() => {
     computeLines()
     window.addEventListener('resize', computeLines)
-    const t1 = setTimeout(computeLines, 100)
-    const t2 = setTimeout(computeLines, 600)
-    const t3 = setTimeout(computeLines, 1200)
+    const t1 = setTimeout(computeLines, 50)
+    const t2 = setTimeout(computeLines, 300)
+    const t3 = setTimeout(computeLines, 800)
+    const t4 = setTimeout(computeLines, 1500)
     return () => {
       window.removeEventListener('resize', computeLines)
       clearTimeout(t1)
       clearTimeout(t2)
       clearTimeout(t3)
+      clearTimeout(t4)
     }
   }, [computeLines])
 
@@ -190,13 +200,13 @@ function Hero() {
       <div className="container">
         <div className="hero-split">
           <div className="hero-left">
-            <h1>Hi I'm Xinyang Li</h1>
+            <h1>{t.greeting}</h1>
             <p className="hero-body">
-              <span className="hero-line hero-line-1">I build <strong>World Models</strong></span>
+              <span className="hero-line hero-line-1" dangerouslySetInnerHTML={{ __html: t.line1 }} />
               <br />
-              <span className="hero-line hero-line-2">not by <span className="ref-underline" ref={refVideoText}>directly generating videos</span></span>
+              <span className="hero-line hero-line-2">{t.line2_prefix}<span className="ref-underline" ref={refVideoText} onMouseEnter={() => setHoverLine('video')} onMouseLeave={() => setHoverLine(null)}>{t.line2_ref}</span></span>
               <br />
-              <span className="hero-line hero-line-3"><span className="em">but by</span> <span className="ref-underline active" ref={refRenderText}>generating persistent worlds</span></span>
+              <span className="hero-line hero-line-3"><span className="em">{t.line3_prefix}</span> <span className="ref-underline active" ref={refRenderText} onMouseEnter={() => setHoverLine('render')} onMouseLeave={() => setHoverLine(null)}>{t.line3_ref}</span></span>
             </p>
 
             <div className="stats-row">
@@ -206,26 +216,26 @@ function Hero() {
                   <path d="M12 14v7" />
                   <path d="M5 9.5v5.5a7 7 0 0 0 14 0V9.5" />
                 </svg>
-                <span className="num">603</span> Citations
+                {t.citations}
               </a>
               <a href="https://github.com/imlixinyang" target="_blank" rel="noopener noreferrer" className="stat-badge">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
                 </svg>
-                <span className="num">1.5K</span> Stars
+                {t.stars}
               </a>
             </div>
 
             <div className="hire-note">
               <span className="hire-date">2026.05</span>
-              Currently seeking 2027 new-grad positions in World Models — feel free to reach out if my work interests you
+              {t.hire}
             </div>
 
-            <NewsTicker news={config.news} />
+            <NewsTicker news={lang === 'zh' ? config.news_zh : config.news} label={t.news_label} />
           </div>
 
           <div className="hero-right">
-            <ComparisonFigure videoRef={refVideoBox} renderRef={refRenderBox} />
+            <ComparisonFigure videoRef={refVideoBox} renderRef={refRenderBox} hoverLine={hoverLine} />
           </div>
         </div>
       </div>

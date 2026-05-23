@@ -1,14 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { LangContext } from '../App'
+import i18n from '../data/i18n.json'
 import './Navbar.css'
 
-const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Research', href: '#skill-tree' },
-  { label: 'GitHub', href: 'https://github.com/imlixinyang', external: true },
-]
-
 function Navbar() {
-  const [active, setActive] = useState('Home')
+  const { lang, setLang } = useContext(LangContext)
+  const t = i18n[lang].nav
+  const [active, setActive] = useState(t.home)
+
+  const navLinks = [
+    { label: t.home, href: '#home' },
+    { label: t.research, href: '#skill-tree' },
+    { label: 'GitHub', href: 'https://github.com/imlixinyang', external: true },
+  ]
 
   useEffect(() => {
     const sections = navLinks
@@ -30,7 +34,7 @@ function Navbar() {
 
     sections.forEach(s => observer.observe(s.el))
     return () => observer.disconnect()
-  }, [])
+  }, [lang])
 
   const handleClick = (e, link) => {
     if (link.external) return
@@ -43,7 +47,9 @@ function Navbar() {
     <nav className="nav">
       <div className="nav-inner">
         <span className="nav-brand">
-          Xinyang Li <span className="cn">/ 李新阳</span>
+          <span className={`nav-lang ${lang === 'en' ? 'nav-lang-active' : ''}`} onClick={() => setLang('en')}>Xinyang Li</span>
+          {' / '}
+          <span className={`nav-lang ${lang === 'zh' ? 'nav-lang-active' : ''}`} onClick={() => setLang('zh')}>李新阳</span>
         </span>
         <div className="nav-links">
           {navLinks.map((link) => (
