@@ -1,3 +1,4 @@
+import config from '../data/config.json'
 import './Footer.css'
 
 function Footer() {
@@ -7,7 +8,7 @@ function Footer() {
         <div className="footer-links">
           <a href="mailto:imlixinyang@gmail.com">imlixinyang@gmail.com</a>
           <a href="https://github.com/imlixinyang" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://scholar.google.com/citations?user=M9rwkHwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar</a>
+          <a href={config.profile.links.scholar.url} target="_blank" rel="noopener noreferrer">Scholar</a>
         </div>
         <div className="footer-note">Xinyang Li · 2026</div>
       </div>

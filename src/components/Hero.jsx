@@ -210,7 +210,7 @@ function Hero() {
             </p>
 
             <div className="stats-row">
-              <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener noreferrer" className="stat-badge">
+              <a href={config.profile.links.scholar.url} target="_blank" rel="noopener noreferrer" className="stat-badge">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M12 14l9-5-9-5-9 5 9 5z" />
                   <path d="M12 14v7" />
