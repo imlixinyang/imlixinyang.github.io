@@ -519,7 +519,7 @@ function SkillTree() {
           <div className="st-footer-links">
             <a href="mailto:imlixinyang@gmail.com">imlixinyang@gmail.com</a>
             <a href="https://github.com/imlixinyang" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Scholar</a>
+            <a href={config.profile.links.scholar.url} target="_blank" rel="noopener noreferrer">Scholar</a>
           </div>
           <div className="st-footer-note">Xinyang Li · 2026</div>
         </div>
